@@ -72,32 +72,32 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.androidx.monitor)
     kapt(libs.dagger.hilt.compiler)
+
     //Retrofit
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation ("com.squareup.okhttp3:logging-interceptor:4.3.1")
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+    implementation (libs.logging.interceptor)
 
     //Camera X
-    val cameraVersion = "1.2.3"
-    implementation ("androidx.camera:camera-core:${cameraVersion}")
-    implementation ("androidx.camera:camera-camera2:${cameraVersion}")
-    implementation ("androidx.camera:camera-lifecycle:${cameraVersion}")
-    implementation ("androidx.camera:camera-view:${cameraVersion}")
-    implementation ("androidx.camera:camera-extensions:${cameraVersion}")
+    implementation (libs.androidx.camera.core)
+    implementation (libs.androidx.camera.camera2)
+    implementation (libs.androidx.camera.lifecycle)
+    implementation (libs.androidx.camera.view)
+    implementation (libs.androidx.camera.extensions)
 
     //UnitTesting
-    testImplementation("junit:junit:4.13.2")
-    testImplementation ("io.kotlintest:kotlintest-runner-junit5:3.4.2")
-    testImplementation ("io.mockk:mockk:1.12.3")
+    testImplementation(libs.junit)
+    testImplementation (libs.kotlintest.runner.junit5)
+    testImplementation (libs.mockk)
 
     //UITesting
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.5.1")
-    androidTestImplementation ("androidx.test.espresso:espresso-intents:3.4.0")
-    androidTestImplementation ("com.google.dagger:hilt-android-testing:2.48")
-    androidTestImplementation ("androidx.fragment:fragment-testing:1.6.1")
-    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.48")
+    androidTestImplementation(libs.androidx.junit.v121)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.espresso.contrib)
+    androidTestImplementation (libs.androidx.espresso.intents)
+    androidTestImplementation (libs.dagger.hilt.android.testing)
+    androidTestImplementation (libs.androidx.fragment.testing)
+    kaptAndroidTest(libs.dagger.hilt.android.compiler)
 
 }
 
