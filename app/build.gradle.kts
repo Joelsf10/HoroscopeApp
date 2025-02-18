@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.hilt)
+    id("org.jetbrains.kotlin.kapt")
 }
 
 android {
@@ -40,20 +42,20 @@ android {
 }
 
 dependencies {
-
     // Navigation Component
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.navigation.ui.ktx)
 
-    // Si usas la navegación con fragmentos en una actividad con Compose
-    implementation(libs.androidx.navigation.compose)
-
+    // Core Android Dependencies
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(libs.hilt.android)
+    kapt(libs.dagger.hilt.compiler)
+
+
 }
+
